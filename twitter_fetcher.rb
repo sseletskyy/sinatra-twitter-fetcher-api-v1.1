@@ -7,14 +7,15 @@ class TwitterFetcher < Sinatra::Base
   helpers Sinatra::Jsonp
 
   @@twitter_client = Twitter::Client.new(
-    :consumer_key       => 'YOUR-CONSUMER-KEY-JUNX',
-    :consumer_secret    => 'YOUR-CONSUMER-SECRET-JUNX',
-    :oauth_token        => 'YOUR-OAUTH-TOKEN-JUNX',
-    :oauth_token_secret => 'YOUR-OAUTH-TOKEN-SECRET-JUNX',
+    :consumer_key       => ENV['consumer_key'],
+    :consumer_secret    => ENV['consumer_secret'],
+    :oauth_token        => ENV['oauth_token'],
+    :oauth_token_secret => ENV['oauth_token_secret'],
   )
 
   get '/' do
-    jsonp @@twitter_client.home_timeline.map(&:attrs)
+    jsonp @@twitter_client.user_timeline("sseletskyy")
+    # jsonp @@twitter_client.home_timeline.map(&:attrs)
   end
 
 end
