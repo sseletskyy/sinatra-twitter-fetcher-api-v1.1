@@ -1,0 +1,26 @@
+<h3 class="text-muted">{{title}}</h3><div class="jumbotron"><p><a ng-click="update()" class="btn btn-success">Let's go!&nbsp;<span class="glyphicon glyphicon-ok"></span></a></p></div><div data-ng-repeat="tweet in tweets" bind-once="bind-once" ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}" class="repeat-animation"><div birdy-tweet="birdy-tweet" ng-model="tweet"></div><!--div.panel.panel-default
+  div.panel-heading {{tweet.created_at}}
+  div.panel-body
+    div.row
+      div.col-xs-4
+        div(ng-show="{{!!tweet['entities']['media'][0]['media_url']}}")
+          div(ng-switch="tweet['entities']['media'][0].type")
+            div(ng-switch-when="photo")
+              a(href="{{tweet['entities']['media'][0]['media_url']}}", target="_blank")
+                img.fit-in-row(src="{{tweet['entities']['media'][0]['media_url']}}")
+            div(ng-switch-default)
+              p {{tweet['entities']['media'][0]['media_url']}}
+        div(ng-hide="{{!!tweet['entities']['media'][0]['media_url']}}")
+          h4.text-center
+            | NO MEDIA
+      div.col-xs-8
+        p {{tweet.text}}
+  div.panel-footer
+    small
+      | Favorited
+      code {{tweet.favorite_count}}
+      || Retweeted
+      code {{tweet.retweet_count}}
+      
+      
+  --></div><div class="footer"><p><span class="glyphicon glyphicon-heart"></span>&nbsp; {{title}}</p></div>

@@ -1,0 +1,5 @@
+ENV['consumer_key'] = 'bZBJRCLwyoUDy7ZERanqRnL8T'
+ENV['consumer_secret'] = 'lrgtnsQrqHGuc1Q6XiGi8siTASqbp8o9opnlf1saqAPVf4GHzs'
+ENV['access_token'] = '96135709-GN9eCgBc3w7rji2hUappdJt1mzUzqiuwR3YAKrbnR'
+ENV['access_token_secret'] = 'QYnPINCDQv5PHV3vUWd7VNTt4gelzMnlHqIbqu9cR6NZI'
+ENV['bearer_token'] = ''
